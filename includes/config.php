@@ -4,7 +4,7 @@
 if (session_status() === PHP_SESSION_NONE) session_start();
 
 define('SITE_NAME', 'MediCare Clinic');
-define('SITE_URL', 'http://localhost/hospital3');
+define('SITE_URL', 'http://localhost/Final_DB');
 
 function getDB() {
     $conn = mysqli_connect('127.0.0.1', 'root', '', 'hospital_db', 3307);
@@ -30,11 +30,11 @@ function requireAdmin() {
     }
 }
 
-function clean($data) {
-    return htmlspecialchars(strip_tags(trim($data)));
+function clean(string $data): string {
+    return htmlspecialchars(strip_tags(trim($data)), ENT_QUOTES, 'UTF-8');
 }
 
-function setFlash($type, $msg) {
+function setFlash(string $type, string $msg): void {
     $_SESSION['flash'] = ['type' => $type, 'msg' => $msg];
 }
 

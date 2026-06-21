@@ -50,6 +50,7 @@ if (!empty($_FILES['photo']['name'])) {
 }
 
 $doctors = mysqli_query($conn, "SELECT * FROM doctors ORDER BY name ASC");
+
 include 'includes/header.php';
 ?>
 

@@ -108,7 +108,7 @@ include 'includes/header.php';
                         <td><?= date('d M Y', strtotime($a['appointment_date'])) ?></td>
                         <td><?= date('h:i A', strtotime($a['appointment_time'])) ?></td>
                         <td class="small"><?= clean($a['reason']) ?: '—' ?></td>
-                        <td><span class="badge badge-<?= $a['status'] ?>"><?= ucfirst($a['status']) ?></span></td>
+                        <td><span class="bs bs-<?= $a['status'] ?>"><?= ucfirst($a['status']) ?></span></td>
                         <td>
                            
 <a href="appointments.php?edit=<?= $a['id'] ?>" class="btn btn-sm btn-warning">
